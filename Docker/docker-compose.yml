@@ -1,0 +1,33 @@
+########################################################################################
+
+version: '3.5'
+
+services:
+
+  ########################################################################################
+  v720-fake:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    image: v720:latest
+    container_name: v720
+    privileged: true
+    hostname: v720
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "80:80"
+      - "6123:6123"
+      - "1883:1883"
+
+    networks:
+      - fake-net
+
+#    command:
+#      - -c
+#      - |
+#        /bin/bash;
+
+networks:
+  fake-net:

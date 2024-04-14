@@ -30,7 +30,7 @@ class v720_sta(log):
     @staticmethod
     def tcp_thread(_http_port: int, on_init_done: function, on_disconnect: function) -> None:
         v720_sta._is_running = True
-        http_th = threading.Thread(target=v720_http.serve_forever, name='HTTP-SRV', args=(_http_port,))
+        http_th = threading.Thread(target=v720_http.serve_forever, name='HOMESRV', args=(_http_port,))
         http_th.setDaemon(True)
         http_th.start()
     

@@ -10,14 +10,14 @@ RUN mkdir /run/mosquitto; chmod 777 /run/mosquitto; chmod 777 /var/run/mosquitto
 
 RUN apt-get -y install nano net-tools
 
-RUN cd; mkdir src; cd src; git clone https://github.com/intx82/a9-v720.git; cd a9-v720
+RUN cd; mkdir src; cd src; git clone https://github.com/bransw/a9-v720.git; cd a9-v720
 
 EXPOSE 80
 EXPOSE 6123
 EXPOSE 6123/udp
 EXPOSE 1883
 EXPOSE 53
-
+EXPOSE 10000-65000/udp
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]

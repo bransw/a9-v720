@@ -17,8 +17,8 @@ from a9_live import show_live
 # _wifi_easyjoin: ssid:ap0 bssid:00:00:00:00:00:00 key:1213aCBVDiop@
 # _wifi_easyjoin: ssid:NAXCLOW bssid:00:00:00:00:00:00 key:34974033A
 
-
-HOST = "192.168.169.1"
+import socket
+HOST = socket.gethostname()
 PORT = 6123
 
 

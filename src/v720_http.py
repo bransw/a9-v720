@@ -19,6 +19,7 @@ TCP_PORT = PORT
 HTTP_PORT = 80
 
 
+
 class v720_http(log, SimpleHTTPRequestHandler):
     STATIC_DIR = 'static'
     protocol_version = 'HTTP/1.1'
@@ -253,7 +254,7 @@ class v720_http(log, SimpleHTTPRequestHandler):
                     "isBind": "8",
                     "domain": "v720.naxclow.com",
                     "updateUrl": None,
-                    "host": netcl_udp.get_ip(list(gws['default'].values())[0][0] if len(gws['default']) > 0 else '10.42.0.1', 80),
+                    "host":   "192.168.0.20",  # netcl_udp.get_ip(list(gws['default'].values())[0][0] if len(gws['default']) > 0 else '10.42.0.1', 80),
                     "currTime": f'{int(datetime.timestamp(datetime.now()))}',
                     "pwd": "deadbeef",
                     "version": None
